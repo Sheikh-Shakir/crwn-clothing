@@ -12,6 +12,7 @@ import SignInAndSignUpPage from './pages/sign-in-and-signup/sign-in-and-signup.c
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
 import selectCurrentUser from './redux/user/user.selector';
+import Checkout from './pages/checkout/checkout.component';
 
 class App extends React.Component {
 
@@ -49,6 +50,8 @@ class App extends React.Component {
         <Routes>
           <Route exact path='/' element={<HomePage />} />
           <Route path='/shop' element={<ShopPage />} />
+          <Route exact path='/checkout' element={<Checkout />} />
+
           <Route
             exact
             path='/signin'
