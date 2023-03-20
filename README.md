@@ -29,6 +29,8 @@ Remember to replace the `config` variable in your `firebase.utils.js` with your 
 
 Set the `publishableKey` variable in the `stripe-button.component.jsx` with your own publishable key from the stripe dashboard.
 
+![alt text](https://i.ibb.co/djQTmVF/Screen-Shot-2019-07-01-at-2-18-50-AM.png "image to publishable key")
+
 ## Things to set before you deploy
 
 You will also need to connect your existing Heroku app to this new forked and cloned repo, or you have to create a new Heroku app and push to it. A quick refresher on how to do either of these:
