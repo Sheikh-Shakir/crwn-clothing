@@ -16,13 +16,15 @@ import {
 } from './sign-in.styles';
 
 const SignIn = ({ emailSignInStart, googleSignInStart }) => {
-
-  const [userCredentials, setCredentials] = useState({ email: '', password: '' })
+  const [userCredentials, setCredentials] = useState({
+    email: '',
+    password: ''
+  });
 
   const { email, password } = userCredentials;
+
   const handleSubmit = async event => {
     event.preventDefault();
-
 
     emailSignInStart(email, password);
   };
@@ -68,7 +70,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
       </form>
     </SignInContainer>
   );
-}
+};
 
 const mapDispatchToProps = dispatch => ({
   googleSignInStart: () => dispatch(googleSignInStart()),
