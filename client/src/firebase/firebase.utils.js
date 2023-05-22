@@ -2,15 +2,17 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
+
 const config = {
-  apiKey: 'AIzaSyCdHT-AYHXjF7wOrfAchX4PIm3cSj5tn14',
-  authDomain: 'crwn-db.firebaseapp.com',
-  databaseURL: 'https://crwn-db.firebaseio.com',
-  projectId: 'crwn-db',
-  storageBucket: 'crwn-db.appspot.com',
-  messagingSenderId: '850995411664',
-  appId: '1:850995411664:web:7ddc01d597846f65'
+  apiKey: "AIzaSyCrwepmc3qbY3iPv9r4037dZzEATfaj85c",
+  authDomain: "crwn-db-99016.firebaseapp.com",
+  projectId: "crwn-db-99016",
+  storageBucket: "crwn-db-99016.appspot.com",
+  messagingSenderId: "61193324151",
+  appId: "1:61193324151:web:0be299a79d09eefd97a872",
+  measurementId: "G-61M4C2WG17"
 };
+
 
 firebase.initializeApp(config);
 
@@ -37,19 +39,6 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   }
 
   return userRef;
-};
-
-export const getUserCartRef = async userId => {
-  const cartsRef = firestore.collection('carts').where('userId', '==', userId);
-  const snapShot = await cartsRef.get();
-
-  if (snapShot.empty) {
-    const cartDocRef = firestore.collection('carts').doc();
-    await cartDocRef.set({ userId, cartItems: [] });
-    return cartDocRef;
-  } else {
-    return snapShot.docs[0].ref;
-  }
 };
 
 export const addCollectionAndDocuments = async (
